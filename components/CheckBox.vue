@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <label class="holder-checkbox">
             <div class="checkbox bounce">
                 <input 
@@ -20,7 +21,6 @@
 
 
 <script setup>
-
 const props = defineProps({
     modelValue:{
         type: Boolean,
@@ -43,52 +43,39 @@ watch(checked, ()=>{
 <style scoped lang="scss">
 
 .holder-checkbox{
-    @apply flex gap-2 items-center cursor-pointer; 
+    @apply inline-flex gap-1.5 items-center cursor-pointer; 
 }
 
 .checkbox {
-    @apply flex items-center justify-center;
-    position: relative;
-    display: inline-block;
-    z-index: 0;
-    width: 21px;
-    height: 21px;
+    @apply relative inline-block flex items-center justify-center rounded-[4px] border border-gray-300 overflow-hidden duration-300 z-0;
+    width: 20px;
+    height: 20px;
     
     input{
-        width: 100%;
-        height: 100%;
-        display: block;
+        @apply block w-full h-full;
     }
 
     input {
         -webkit-appearance: none;
         -moz-appearance: none;
-        position: relative;
-        outline: none;
-        background-color: transparent;
-        border: none;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: .3s;
-        border: 1px solid #000;
+        @apply relative outline-none bg-transparent cursor-pointer  m-0 p-0;
 
         &:checked {
-            background-color: red;
+            @apply bg-green-500;
         }
     }
 
     svg {
+        @apply absolute;
         pointer-events: none;
         fill: none;
         stroke-width: 2px;
         stroke-linecap: round;
         stroke-linejoin: round;
         position: absolute;
-        top: 10%;
-        left: 10%;
-        width: 80%;
+        top: 5%;
+        left: 5%;
+        width: 90%;
         transform: scale(var(--scale, 1)) translateZ(0);
     }
 
