@@ -116,7 +116,7 @@ function updateValue(value) {
     @apply mb-5;
 
     input, textarea{
-        @apply border resize-none;
+        @apply border resize-none rounded-md p-2;
     }
 
 }

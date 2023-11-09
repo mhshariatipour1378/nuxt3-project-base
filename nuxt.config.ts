@@ -11,7 +11,6 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt', '@vee-validate/nuxt'],
 
   runtimeConfig: {
-    apiSecret: '', 
     public: {
       apiBase: process.env.API_BASE_URL,
       pathGetUser: process.env.PATH_GET_USER,

@@ -1,18 +1,32 @@
 <template>
     <div class="container mx-auto">
-        <div class="bg-red-500 mb-5">Login Page</div>
+        <div class="text-3xl mb-5">Login Page</div>
 
         <div>
             <b class="block mb-3">Form login</b>
 
-            <div class="mb-3">
-                <input v-model="formData.email" class="border border-gray-400 rounded-md p-3" placeholder="email"/>
-            </div>
-            <div class="mb-3">
-                <input v-model="formData.password" class="border border-gray-400 rounded-md p-3" placeholder="password" type="password"/>
-            </div>
+            <Form @submit="handelLogin()">
+                <div class="mb-3">
+                    <custom-input 
+                        v-model="formData.email"
+                        type="email"
+                        placeholder="Enter email" 
+                        name="email"
+                        required
+                    ></custom-input>
+                </div>
+                <div class="mb-3">
+                    <custom-input 
+                        v-model="formData.password"
+                        type="password"
+                        placeholder="Password" 
+                        name="password"
+                        required
+                    ></custom-input>
+                </div>
 
-            <button @click="handelLogin()" class="bg-green-500 text-white rounded-md px-5 py-2 m-2">SUBMIT</button>
+                <button @click="handelLogin()" class="bg-green-500 text-white rounded-md px-5 py-2 m-2">SUBMIT</button>
+            </Form>
             
             <div v-if="generalPending">
                 Loading
